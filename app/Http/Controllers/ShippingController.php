@@ -14,7 +14,8 @@ class ShippingController extends Controller
      */
     public function index()
     {
-        //
+        $shippings = shipping::all();
+        return view('admin.shipping.index',compact('shippings'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ShippingController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.shipping.create');
     }
 
     /**
@@ -35,7 +36,12 @@ class ShippingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $shipping = new Shipping(); 
+        $shipping->pais= $request->pais;
+        $shipping->address= $request->address;
+        $shipping->shipping_date= $request->shipping_date;
+        $shipping->save();
+        return redirect()->route('shipping.index');
     }
 
     /**
@@ -57,7 +63,7 @@ class ShippingController extends Controller
      */
     public function edit(Shipping $shipping)
     {
-        //
+        return view('admin.shipping.edit',compact('shipping'));
     }
 
     /**
@@ -69,7 +75,11 @@ class ShippingController extends Controller
      */
     public function update(Request $request, Shipping $shipping)
     {
-        //
+        $shipping->pais= $request->pais;
+        $shipping->address= $request->address;
+        $shipping->shipping_date= $request->shipping_date;
+        $shipping->update();
+        return redirect()->route('shipping.index');
     }
 
     /**
@@ -80,6 +90,7 @@ class ShippingController extends Controller
      */
     public function destroy(Shipping $shipping)
     {
-        //
+        $shipping->delete();
+        return redirect()->route('shipping.index');
     }
 }

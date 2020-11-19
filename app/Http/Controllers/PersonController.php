@@ -14,7 +14,8 @@ class PersonController extends Controller
      */
     public function index()
     {
-        //
+        $people = Person::all();
+        return view('admin.person.index', compact('people'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PersonController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.person.create');
     }
 
     /**
@@ -35,7 +36,15 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $person = new Person(); 
+        $person->name= $request->name;
+        $person->lastname= $request->lastname;
+        $person->birth= $request->birth;
+        $person->phone= $request->phone;
+        $person->address= $request->address;
+        $person->city= $request->city;
+        $person->save();
+        return redirect()->route('person.index');
     }
 
     /**
@@ -57,7 +66,7 @@ class PersonController extends Controller
      */
     public function edit(Person $person)
     {
-        //
+        return view('admin.person.edit',compact('person'));
     }
 
     /**
@@ -69,7 +78,14 @@ class PersonController extends Controller
      */
     public function update(Request $request, Person $person)
     {
-        //
+        $person->name= $request->name;
+        $person->lastname= $request->lastname;
+        $person->birth= $request->birth;
+        $person->phone= $request->phone;
+        $person->address= $request->address;
+        $person->city= $request->city;
+        $person->update();
+        return redirect()->route('person.index');
     }
 
     /**
@@ -80,6 +96,7 @@ class PersonController extends Controller
      */
     public function destroy(Person $person)
     {
-        //
+        $person->delete();
+        return redirect ()->route('person.index');
     }
 }
