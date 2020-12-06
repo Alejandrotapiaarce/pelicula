@@ -24,7 +24,6 @@ class CreateMoviesTable extends Migration
             $table->date("premiere");
             $table->string("summary");
             $table->foreignId("actor_id");
-            $table->foreignId("opinion_id");
             $table->foreignId("category_id");
             $table->timestamps();
         });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -14,7 +15,8 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        $games =Game::all();
+        return view ('admin.game.index',compact('games'));
     }
 
     /**
@@ -24,7 +26,9 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('admin.game.create',compact('categories'));
+
     }
 
     /**
@@ -35,7 +39,15 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $game = new Game();
+        $game->name = $request->name;
+        $game->type = $request->type;
+        $game->game_year = $request->game_year;
+        $game->requirements = $request->requirements;
+        $game->platform = $request->platform;
+        $game->category_id = $request->category_id;
+        $game->save();
+        return redirect()->route('game.index');
     }
 
     /**
@@ -57,7 +69,8 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        //
+        $categories = Category::all();
+        return view ('admin.game.edit',compact('game','categories'));
     }
 
     /**
@@ -69,7 +82,14 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
-        //
+        $game->name = $request->name;
+        $game->type = $request->type;
+        $game->game_year = $request->game_year;
+        $game->requirements = $request->requirements;
+        $game->platform = $request->platform;
+        $game->category_id = $request->category_id;
+        $game->update();
+        return redirect()->route('game.index');
     }
 
     /**
@@ -80,6 +100,7 @@ class GameController extends Controller
      */
     public function destroy(Game $game)
     {
-        //
+        $game->delete();
+        return redirect()->route('game.index');
     }
 }

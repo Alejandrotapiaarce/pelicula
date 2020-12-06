@@ -14,7 +14,8 @@ class SaleController extends Controller
      */
     public function index()
     {
-        //
+        $sales= Sale::all();
+        return view('admin.sale.index',compact('sales'));
     }
 
     /**
@@ -24,7 +25,7 @@ class SaleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.sale.create');
     }
 
     /**
@@ -35,7 +36,7 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**

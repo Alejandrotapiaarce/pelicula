@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Category;
+use App\Models\Actor;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -14,7 +16,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        $movies= Movie::all();
+        return view('admin.movie.index',compact('movies'));
     }
 
     /**
@@ -24,7 +27,9 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $actors = Actor::all();
+        return view('admin.movie.create',compact('categories','actors'));
     }
 
     /**
@@ -35,7 +40,19 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $movie= new Movie();
+        $movie->title =$request->title;
+        $movie->gender =$request->gender;
+        $movie->language =$request->language;
+        $movie->production =$request->production;
+        $movie->duration =$request->duration;
+        $movie->qualification =$request->qualification;
+        $movie->premiere =$request->premiere;
+        $movie->summary =$request->summary;
+        $movie->actor_id =$request->actor_id;
+        $movie->category_id =$request->category_id;
+        $movie->save();
+        return redirect()->route('movie.index');
     }
 
     /**
@@ -57,7 +74,9 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        //
+        $categories = Category::all();
+        $actors = Actor::all();
+        return view('admin.movie.edit',compact('categories','actors','movie'));
     }
 
     /**
@@ -69,7 +88,18 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        //
+        $movie->title =$request->title;
+        $movie->gender =$request->gender;
+        $movie->language =$request->language;
+        $movie->production =$request->production;
+        $movie->duration =$request->duration;
+        $movie->qualification =$request->qualification;
+        $movie->premiere =$request->premiere;
+        $movie->summary =$request->summary;
+        $movie->actor_id =$request->actor_id;
+        $movie->category_id =$request->category_id;
+        $movie->update();
+        return redirect()->route('movie.index');
     }
 
     /**
@@ -80,6 +110,7 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        //
+        $movie->delete();
+        return redirect()->route('movie.index');
     }
 }

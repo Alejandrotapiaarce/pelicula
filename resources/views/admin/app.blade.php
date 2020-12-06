@@ -17,8 +17,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v9.0" nonce="2kn4gdZK"></script>
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -251,6 +255,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('actor.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               Actores
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('serie.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               Serie
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('game.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               Juego
+                
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -318,5 +349,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+<script>
+  $(".basic-multiple").select2();
+</script>
 </body>
 </html>

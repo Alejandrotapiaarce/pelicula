@@ -24,3 +24,8 @@ Route::resource('/category',App\Http\Controllers\CategoryController::class);
 Route::resource('/product',App\Http\Controllers\ProductController::class);
 Route::resource('/person',App\Http\Controllers\PersonController::class);
 Route::resource('/shipping',App\Http\Controllers\ShippingController::class);
+Route::resource('/actor',App\Http\Controllers\ActorController::class);
+Route::resource('/game',App\Http\Controllers\GameController::class);
+Route::resource('/serie',App\Http\Controllers\SerieController::class);
+Route::resource('/movie',App\Http\Controllers\MovieController::class);
+Route::resource('/sale',App\Http\Controllers\SaleController::class);

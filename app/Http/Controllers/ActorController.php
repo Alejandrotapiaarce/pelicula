@@ -14,7 +14,8 @@ class ActorController extends Controller
      */
     public function index()
     {
-        //
+        $actors = Actor::all();
+        return view('admin.actor.index', compact('actors'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ActorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.actor.create');
     }
 
     /**
@@ -35,7 +36,12 @@ class ActorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $actor = new actor(); 
+        $actor->name= $request->name;
+        $actor->city= $request->city;
+        $actor->birth= $request->birth;
+        $actor->save();
+        return redirect()->route('actor.index');
     }
 
     /**
@@ -57,7 +63,7 @@ class ActorController extends Controller
      */
     public function edit(Actor $actor)
     {
-        //
+        return view('admin.actor.edit',compact('actor'));
     }
 
     /**
@@ -68,8 +74,12 @@ class ActorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Actor $actor)
-    {
-        //
+    { 
+        $actor->name= $request->name;
+        $actor->city= $request->city;
+        $actor->birth= $request->birth;
+        $actor->update();
+        return redirect()->route('actor.index');
     }
 
     /**
@@ -80,6 +90,7 @@ class ActorController extends Controller
      */
     public function destroy(Actor $actor)
     {
-        //
+        $actor->delete();
+        return redirect ()->route('actor.index');
     }
 }

@@ -14,7 +14,8 @@ class OpinionController extends Controller
      */
     public function index()
     {
-        //
+        $opinions = Opinion::all();
+        return view('admin.opinion.index',compact('opinions'));
     }
 
     /**
@@ -24,7 +25,7 @@ class OpinionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.opinion.create');
     }
 
     /**
@@ -35,7 +36,13 @@ class OpinionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $opinion = new Opinion(); 
+        $opinion->name= $request->name;
+        $opinion->comentary_date= $request->comentary_date;
+        $opinion->qualification= $request->qualification;
+        $opinion->commentary= $request->commentary;
+        $opinion->save();
+        return redirect()->route('opinion.index');
     }
 
     /**
@@ -57,7 +64,7 @@ class OpinionController extends Controller
      */
     public function edit(Opinion $opinion)
     {
-        //
+        return view('admin.opinion.edit',compact('opinion'));
     }
 
     /**
@@ -69,7 +76,12 @@ class OpinionController extends Controller
      */
     public function update(Request $request, Opinion $opinion)
     {
-        //
+        $opinion->name= $request->name;
+        $opinion->comentary_date= $request->comentary_date;
+        $opinion->qualification= $request->qualification;
+        $opinion->commentary= $request->commentary;
+        $opinion->update();
+        return redirect()->route('opinion.index');
     }
 
     /**
@@ -80,6 +92,7 @@ class OpinionController extends Controller
      */
     public function destroy(Opinion $opinion)
     {
-        //
+        $opinion->delete();
+        return redirect ()->route('opinion.index');
     }
 }

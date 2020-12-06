@@ -19,11 +19,7 @@ class Movie extends Model
 
     public function actor()
     {
-        return $this->hasMany(Actor::class);
+        return $this->belongsTo(Actor::class);
     }
 
-    public function opinion()
-    {
-        return $this->hasMany(Opinion::class);
-    }
 }
