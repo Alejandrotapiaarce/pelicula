@@ -20,6 +20,7 @@ class CreateGamesTable extends Migration
             $table->year("game_year");
             $table->string("requirements");
             $table->string("platform");
+            $table->string("image");
             $table->foreignId("category_id");
             $table->timestamps();
         });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GameController extends Controller
 {
@@ -39,10 +40,12 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
+        $url = Storage::url(request()->file('file')->store('public'));
         $game = new Game();
         $game->name = $request->name;
         $game->type = $request->type;
         $game->game_year = $request->game_year;
+        $game->image = $url;
         $game->requirements = $request->requirements;
         $game->platform = $request->platform;
         $game->category_id = $request->category_id;

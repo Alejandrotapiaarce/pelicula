@@ -23,6 +23,7 @@ class CreateMoviesTable extends Migration
             $table->integer("qualification");
             $table->date("premiere");
             $table->string("summary");
+            $table->string("image");
             $table->foreignId("actor_id");
             $table->foreignId("category_id");
             $table->timestamps();

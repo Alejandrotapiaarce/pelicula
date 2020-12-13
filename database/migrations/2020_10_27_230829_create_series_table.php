@@ -21,6 +21,7 @@ class CreateSeriesTable extends Migration
             $table->string("chapter");
             $table->year("premiere");
             $table->string("gender");
+            $table->string("image");
             $table->foreignId("category_id");
             $table->timestamps();
         });

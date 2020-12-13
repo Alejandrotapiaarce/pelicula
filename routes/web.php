@@ -14,18 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.app');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/category',App\Http\Controllers\CategoryController::class);
-Route::resource('/product',App\Http\Controllers\ProductController::class);
-Route::resource('/person',App\Http\Controllers\PersonController::class);
-Route::resource('/shipping',App\Http\Controllers\ShippingController::class);
-Route::resource('/actor',App\Http\Controllers\ActorController::class);
-Route::resource('/game',App\Http\Controllers\GameController::class);
-Route::resource('/serie',App\Http\Controllers\SerieController::class);
-Route::resource('/movie',App\Http\Controllers\MovieController::class);
-Route::resource('/sale',App\Http\Controllers\SaleController::class);
+Route::resource('/category',App\Http\Controllers\CategoryController::class)->middleware('auth');
+Route::resource('/product',App\Http\Controllers\ProductController::class)->middleware('auth');
+Route::resource('/person',App\Http\Controllers\PersonController::class)->middleware('auth');
+Route::resource('/shipping',App\Http\Controllers\ShippingController::class)->middleware('auth');
+Route::resource('/actor',App\Http\Controllers\ActorController::class)->middleware('auth');
+Route::resource('/game',App\Http\Controllers\GameController::class)->middleware('auth');
+Route::resource('/serie',App\Http\Controllers\SerieController::class)->middleware('auth');
+Route::resource('/movie',App\Http\Controllers\MovieController::class)->middleware('auth');
+Route::resource('/sale',App\Http\Controllers\SaleController::class)->middleware('auth');

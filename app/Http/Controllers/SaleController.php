@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sale;
+use App\Models\Game;
+use App\Models\Serie;
+use App\Models\Movie;
+use App\Models\Product;
+use App\Models\Shipping;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -25,7 +30,12 @@ class SaleController extends Controller
      */
     public function create()
     {
-        return view('admin.sale.create');
+        $games=Game::all();
+        $series=Serie::all();
+        $movies=Movie::all();
+        $shippings=Shipping::all();
+        $products=Product::all();
+        return view('admin.sale.create',compact('games','series','movies','products','shippings'));
     }
 
     /**

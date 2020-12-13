@@ -29,13 +29,25 @@
                     <label for="">
                         Series:
                     </label>
-                    <input type="text" class="form-control" name="production">
+                    <select class="basic-multiple custom-select" name="states[]" multiple="multiple">
+                        <option value="cu">cuchara</option>
+                        <option value="pl">plato</option>
+                        <option value="ta">tasa</option>
+                        <option value="si">silla</option>
+                        <option value="me">mesa</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="">
                        Juego:
                     </label>
-                    <input type="text" class="form-control" name="duration">
+                    <select class="basic-multiple custom-select" name="states[]" multiple="multiple">
+                        <option value="cu">cuchara</option>
+                        <option value="pl">plato</option>
+                        <option value="ta">tasa</option>
+                        <option value="si">silla</option>
+                        <option value="me">mesa</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -46,7 +58,13 @@
                     <label for="">
                        Pelicula:
                     </label>
-                    <input type="text" class="form-control" name="qualification">
+                    <select class="basic-multiple custom-select" name="states[]" multiple="multiple">
+                        <option value="cu">cuchara</option>
+                        <option value="pl">plato</option>
+                        <option value="ta">tasa</option>
+                        <option value="si">silla</option>
+                        <option value="me">mesa</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="">
