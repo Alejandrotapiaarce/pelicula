@@ -25,6 +25,12 @@ class CreateSeriesTable extends Migration
             $table->foreignId("category_id");
             $table->timestamps();
         });
+        Schema::create('sale_serie', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId("sale_id");
+            $table->foreignId("serie_id");
+            $table->timestamps();
+        });
     }
 
     /**

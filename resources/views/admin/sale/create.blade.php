@@ -2,9 +2,9 @@
 @section('content')
 <form action="{{ route('sale.store') }}" method="POST">
     @csrf
-<div class="row justify-content-between">
+<div class="">
    
-        <div class="col-6">
+       
             <div class="card border shadow p-4">
 
                 <div class="form-group">
@@ -25,62 +25,103 @@
                     </label>
                     <input type="text" class="form-control" name="language">
                 </div>
-                <div class="form-group">
-                    <label for="">
-                        Series:
-                    </label>
-                    <select class="basic-multiple custom-select" name="states[]" multiple="multiple">
-                        <option value="cu">cuchara</option>
-                        <option value="pl">plato</option>
-                        <option value="ta">tasa</option>
-                        <option value="si">silla</option>
-                        <option value="me">mesa</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="">
-                       Juego:
-                    </label>
-                    <select class="basic-multiple custom-select" name="states[]" multiple="multiple">
-                        <option value="cu">cuchara</option>
-                        <option value="pl">plato</option>
-                        <option value="ta">tasa</option>
-                        <option value="si">silla</option>
-                        <option value="me">mesa</option>
-                    </select>
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary">
+                                    Añadir Juego
+                                </button>
+                            </div>
+                        </div>
+                     
+                     
+                      
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>nombre</th>
+                                    <th>precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>id</th>
+                                    <th>nombre</th>
+                                    <th>precio</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary">
+                            Añadir Serie
+                        </button>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>nombre</th>
+                                    <th>precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>id</th>
+                                    <th>nombre</th>
+                                    <th>precio</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary">
+                            Añadir Pelicula
+                        </button>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>nombre</th>
+                                    <th>precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>id</th>
+                                    <th>nombre</th>
+                                    <th>precio</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary">
+                            Añadir Producto
+                        </button>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>nombre</th>
+                                    <th>precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>id</th>
+                                    <th>nombre</th>
+                                    <th>precio</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="card border shadow p-4">
-
-                <div class="form-group">
-                    <label for="">
-                       Pelicula:
-                    </label>
-                    <select class="basic-multiple custom-select" name="states[]" multiple="multiple">
-                        <option value="cu">cuchara</option>
-                        <option value="pl">plato</option>
-                        <option value="ta">tasa</option>
-                        <option value="si">silla</option>
-                        <option value="me">mesa</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="">
-                       Envio:
-                    </label>
-                    <select class="basic-multiple custom-select" name="states[]" multiple="multiple">
-                        <option value="cu">cuchara</option>
-                        <option value="pl">plato</option>
-                        <option value="ta">tasa</option>
-                        <option value="si">silla</option>
-                        <option value="me">mesa</option>
-                    </select>
-                </div>
-                <button class="btn btn-primary btn-block">Guardar</button>
-            </div>
-        </div>   
+                <button class="btn btn-primary btn-block">Guardar</button> 
    
 </div>
     </form>

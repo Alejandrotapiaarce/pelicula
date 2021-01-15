@@ -281,6 +281,15 @@ href="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-pre
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('movie.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               Pelicula
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('game.index') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>

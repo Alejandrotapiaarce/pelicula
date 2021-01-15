@@ -28,6 +28,12 @@ class CreateMoviesTable extends Migration
             $table->foreignId("category_id");
             $table->timestamps();
         });
+        Schema::create('sale_movie', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId("sale_id");
+            $table->foreignId("movie_id");
+            $table->timestamps();
+        });
     }
 
     /**

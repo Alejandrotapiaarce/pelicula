@@ -6,6 +6,7 @@ use App\Models\Movie;
 use App\Models\Category;
 use App\Models\Actor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MovieController extends Controller
 {
@@ -40,12 +41,14 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
+        $url = Storage::url(request()->file('file')->store('public'));
         $movie= new Movie();
         $movie->title =$request->title;
         $movie->gender =$request->gender;
         $movie->language =$request->language;
         $movie->production =$request->production;
         $movie->duration =$request->duration;
+        $movie->image = $url;
         $movie->qualification =$request->qualification;
         $movie->premiere =$request->premiere;
         $movie->summary =$request->summary;

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Serie;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SerieController extends Controller
 {
@@ -38,8 +39,10 @@ class SerieController extends Controller
      */
     public function store(Request $request)
     {
+        $url = Storage::url(request()->file('file')->store('public'));
         $serie = new Serie ();
         $serie->name = $request->name;
+        $serie->image = $url;
         $serie->season = $request->season;
         $serie->language = $request->language;
         $serie->chapter = $request->chapter;

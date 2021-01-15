@@ -18,11 +18,7 @@ class CreateSalesTable extends Migration
             $table->integer("cost");
             $table->string("name");
             $table->date("sale_date");
-            $table->foreignId("serie_id");
-            $table->foreignId("game_id");
-            $table->foreignId("movie_id");
-            $table->foreignId("product_id");
-            $table->foreignId("shipping_id");
+            
             $table->timestamps();
         });
     }

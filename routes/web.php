@@ -19,6 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/paypal/pay', [App\Http\Controllers\PaymentController::class,'payWithPayPal']);
+Route::get('/paypal/status', [App\Http\Controllers\PaymentController::class,'payPalStatus']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/category',App\Http\Controllers\CategoryController::class)->middleware('auth');
 Route::resource('/product',App\Http\Controllers\ProductController::class)->middleware('auth');
