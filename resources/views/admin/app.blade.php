@@ -25,7 +25,7 @@ rel="stylesheet"
 type="text/css"
 href="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.css"
 />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
 </head>
 <body class="hold-transition sidebar-mini">
   <div id="fb-root"></div>
@@ -365,11 +365,11 @@ href="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-pre
 <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
 <script src="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.js"></script>
 @stack('scripts')
 <script>
-  $(".basic-multiple").select2();
+  
 </script>
 </body>
 </html>

@@ -51,10 +51,29 @@
                                 </tr>
                             @endforeach
                         </tbody>
+                        
                     </table>
+                    <h2>Pago con paypal</h2>
+                    <div id="body"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script src="https://www.paypal.com/sdk/js?client-id=AYagWDuDXXvmTzBzSl8cr3GqTJp1jvzuomvtHVMroJpwfqbhJXczRo02TEY07DQGR5anSQx2wzb5yQMK"></script>
+<script>paypal.Buttons({
+    createOrder: function(data, actions)  {
+      // Set up the transaction
+      return actions.order.create( {
+        purchase_units: [ {
+          amount:  {
+            value: '5'
+           }
+         }]
+       });
+     }
+   }).render('#body');</script>
+@endpush
