@@ -106,4 +106,9 @@ class GameController extends Controller
         $game->delete();
         return redirect()->route('game.index');
     }
+
+    public function apiGames($id)
+    {
+        return Game::find($id);
+    }
 }

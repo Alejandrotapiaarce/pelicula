@@ -8,9 +8,7 @@
                     {{ __('Lista de Ventas') }}
                     <a href="{{ route('sale.create') }}">Nueva Venta</a>
                 </div>
-
                 <div class="card-body">
-                   
                     <table class="table">
                         <thead>
                             <tr>
@@ -18,11 +16,7 @@
                                 <td>Nombre</td>
                                 <td>Costo</td>
                                 <td>Fecha</td>
-                                <td>Serie </td>
-                                <td>Juego</td>
-                                <td>Pelicula</td>
-                                <td>Producto</td>
-                                <td>Envio</td>
+                                <td>Detalles</td>
                                 <td>Acciones</td>
                             </tr>
                         </thead>
@@ -33,11 +27,11 @@
                                     <td>{{ $sale->name }}</td>
                                     <td>{{ $sale->cost }}</td>
                                     <td>{{ $sale->sale_date }}</td>
-                                    <td>{{ $sale->serie->name }}</td>
-                                    <td>{{ $sale->game->name }}</td>
-                                    <td>{{ $sale->movie->name }}</td>
-                                    <td>{{ $sale->product->name }}</td>
-                                    <td>{{ $sale->shipping->name }}</td>
+                                    <td>
+                                        <a href="{{ route('sale.detail', $sale->id) }}">
+                                            Ver mas
+                                        </a>
+                                    </td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <a href="{{ route('sale.edit',$sale) }}" class="badge badge-success mr-3">Editar</a>
@@ -51,18 +45,16 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                        
                     </table>
-                    <h2>Pago con paypal</h2>
-                    <div id="body"></div>
                 </div>
             </div>
+            {{-- <div id="body"></div> --}}
         </div>
     </div>
 </div>
 @endsection
 
-@push('scripts')
+{{-- @push('scripts')
 <script src="https://www.paypal.com/sdk/js?client-id=AYagWDuDXXvmTzBzSl8cr3GqTJp1jvzuomvtHVMroJpwfqbhJXczRo02TEY07DQGR5anSQx2wzb5yQMK"></script>
 <script>paypal.Buttons({
     createOrder: function(data, actions)  {
@@ -76,4 +68,4 @@
        });
      }
    }).render('#body');</script>
-@endpush
+@endpush --}}

@@ -22,7 +22,10 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'image' => 'https://picsum.photos/300/300',
+            'price' => 99,
+            'quantity' => $this->faker->randomNumber($nbDigits = 2),
         ];
     }
 }

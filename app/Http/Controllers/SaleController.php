@@ -38,6 +38,13 @@ class SaleController extends Controller
         return view('admin.sale.create',compact('games','series','movies','products','shippings'));
     }
 
+    public function detail($id)
+    {
+        return view('admin.sale.detail', [
+            'sale' => Sale::find($id)
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -46,7 +53,28 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $juegos = explode(',' , $request->juegos[0]);
+        $peliculas = explode(',' , $request->peliculas[0]);
+        $series = explode(',' , $request->series[0]);
+        $productos = explode(',' , $request->productos[0]);
+        $venta = new Sale();
+        $venta->name = $request->name;
+        $venta->cost = $request->cost;
+        $venta->sale_date = $request->sale_date;
+        $venta->save();
+        if ( $request->juegos[0] ) {
+            $venta->game()->attach($juegos);
+        }
+        if ( $request->peliculas[0] ) {
+            $venta->movie()->attach($peliculas);
+        }
+        if ( $request->series[0] ) {
+            $venta->serie()->attach($series);
+        }
+        if ( $request->productos[0] ) {
+            $venta->product()->attach($productos);
+        }
+        return redirect()->route('sale.index');
     }
 
     /**

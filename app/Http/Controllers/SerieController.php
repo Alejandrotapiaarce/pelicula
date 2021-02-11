@@ -108,4 +108,9 @@ class SerieController extends Controller
         $serie->delete();
         return redirect()->route('serie.index');
     }
+
+    public function apiSeries($id)
+    {
+        return Serie::find($id);
+    }
 }

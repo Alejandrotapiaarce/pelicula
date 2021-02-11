@@ -6,7 +6,7 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="{{ asset('store/img/favicon.ico') }}" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
@@ -32,13 +32,13 @@
                     </div>
                     <div class="col-sm-6">
                         <i class="fa fa-phone-alt"></i>
-                        +012-345-6789
+                        +50175187812
                     </div>
                 </div>
             </div>
         </div>
         <!-- Top bar End -->
-        
+
         <!-- Nav Bar Start -->
         <div class="nav">
             <div class="container-fluid">
@@ -51,26 +51,16 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
                             <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="product-list.html" class="nav-item nav-link">Products</a>
-                            <a href="product-detail.html" class="nav-item nav-link">Product Detail</a>
-                            <a href="cart.html" class="nav-item nav-link">Cart</a>
-                            <a href="checkout.html" class="nav-item nav-link">Checkout</a>
-                            <a href="my-account.html" class="nav-item nav-link">My Account</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>
-                                <div class="dropdown-menu">
-                                    <a href="wishlist.html" class="dropdown-item">Wishlist</a>
-                                    <a href="login.html" class="dropdown-item">Login & Register</a>
-                                    <a href="contact.html" class="dropdown-item">Contact Us</a>
-                                </div>
-                            </div>
+                            <a href="{{ route('page.products') }}" class="nav-item nav-link">
+                                Productos
+                            </a>
                         </div>
                         <div class="navbar-nav ml-auto">
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta Usuario</a>
                                 <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Login</a>
-                                    <a href="#" class="dropdown-item">Register</a>
+                                    <a href="#" class="dropdown-item">Iniciar sesion</a>
+                                    <a href="#" class="dropdown-item">Registrarse</a>
                                 </div>
                             </div>
                         </div>
@@ -78,8 +68,8 @@
                 </nav>
             </div>
         </div>
-        <!-- Nav Bar End -->      
-        
+        <!-- Nav Bar End -->
+
         <!-- Bottom Bar Start -->
         <div class="bottom-bar">
             <div class="container-fluid">
@@ -112,8 +102,8 @@
                 </div>
             </div>
         </div>
-        <!-- Bottom Bar End -->       
-        
+        <!-- Bottom Bar End -->
+
         <!-- Main Slider Start -->
         <div class="header">
             <div class="container-fluid">
@@ -134,7 +124,7 @@
                                     <a class="nav-link" href="#"><i class="fa fa-female"></i>Juegos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-child"></i>Productos</a>
+                                    <a class="nav-link" href="{{ route('page.products') }}"><i class="fa fa-child"></i>Productos</a>
                                 </li>
                             </ul>
                         </nav>
@@ -144,21 +134,21 @@
                             <div class="header-slider-item">
                             <img src="{{ asset('store/img/slider-1.jpg') }}" alt="Slider Image" />
                                 <div class="header-slider-caption">
-                                    <p>Some text goes here that describes the image</p>
+
                                     <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
                                 </div>
                             </div>
                             <div class="header-slider-item">
                             <img src="{{ asset('store/img/slider-2.jpg') }}" alt="Slider Image" />
                                 <div class="header-slider-caption">
-                                    <p>Some text goes here that describes the image</p>
+
                                     <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
                                 </div>
                             </div>
                             <div class="header-slider-item">
                             <img src="{{ asset('store/img/slider-3.jpg') }}" alt="Slider Image" />
                                 <div class="header-slider-caption">
-                                    <p>Some text goes here that describes the image</p>
+
                                     <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
                                 </div>
                             </div>
@@ -169,13 +159,13 @@
                             <div class="img-item">
                             <img src="{{ asset('store/img/category-1.jpg') }}" />
                                 <a class="img-text" href="">
-                                    <p>Some text goes here that describes the image</p>
+
                                 </a>
                             </div>
                             <div class="img-item">
                             <img src="{{ asset('asset/img/category-2.jpg') }}" />
                                 <a class="img-text" href="">
-                                    <p>Some text goes here that describes the image</p>
+
                                 </a>
                             </div>
                         </div>
@@ -183,8 +173,8 @@
                 </div>
             </div>
         </div>
-        <!-- Main Slider End -->      
-        
+        <!-- Main Slider End -->
+
         <!-- Brand Start -->
         <div class="brand">
             <div class="container-fluid">
@@ -198,8 +188,8 @@
                 </div>
             </div>
         </div>
-        <!-- Brand End -->      
-        
+        <!-- Brand End -->
+
         <!-- Feature Start-->
         <div class="feature">
             <div class="container-fluid">
@@ -209,7 +199,7 @@
                             <i class="fab fa-cc-mastercard"></i>
                             <h2>Pagos Seguro</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur elit
+                               MENSAJES
                             </p>
                         </div>
                     </div>
@@ -218,7 +208,7 @@
                             <i class="fa fa-truck"></i>
                             <h2>Envios Nacional</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur elit
+                                MENSAJES
                             </p>
                         </div>
                     </div>
@@ -227,7 +217,7 @@
                             <i class="fa fa-sync-alt"></i>
                             <h2>Retorno de 90 dias</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur elit
+                                MENSAJES
                             </p>
                         </div>
                     </div>
@@ -236,15 +226,15 @@
                             <i class="fa fa-comments"></i>
                             <h2>24/7 soporte</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur elit
+                                MENSAJES
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Feature End-->      
-        
+        <!-- Feature End-->
+
         <!-- Category Start-->
         <div class="category">
             <div class="container-fluid">
@@ -253,7 +243,7 @@
                         <div class="category-item ch-400">
                         <img src="{{ asset('store/img/category-3.jpg') }}" />
                             <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
+
                             </a>
                         </div>
                     </div>
@@ -261,13 +251,13 @@
                         <div class="category-item ch-250">
                         <img src="{{ asset('store/img/category-4.jpg') }}" />
                             <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
+
                             </a>
                         </div>
                         <div class="category-item ch-150">
                         <img src="{{ asset('store/img/category-5.jpg') }}" />
                             <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
+
                             </a>
                         </div>
                     </div>
@@ -275,13 +265,13 @@
                         <div class="category-item ch-150">
                         <img src="{{ asset('store/img/category-6.jpg') }}" />
                             <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
+
                             </a>
                         </div>
                         <div class="category-item ch-250">
                         <img src="{{ asset('store/img/category-7.jpg') }}" />
                             <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
+
                             </a>
                         </div>
                     </div>
@@ -289,15 +279,15 @@
                         <div class="category-item ch-400">
                         <img src="{{ asset('store/img/category-8.jpg') }}" />
                             <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
+
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Category End-->       
-        
+        <!-- Category End-->
+
         <!-- Call to Action Start -->
         <div class="call-to-action">
             <div class="container-fluid">
@@ -306,24 +296,24 @@
                         <h1>llámanos para cualquier consulta</h1>
                     </div>
                     <div class="col-md-6">
-                        <a href="tel:0123456789">+012-345-6789</a>
+                        <a href="tel:0123456789">+50175187812</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Call to Action End -->            
-        
+        <!-- Call to Action End -->
+
         <!-- Recent Product Start -->
         <div class="recent-product product">
             <div class="container-fluid">
                 <div class="section-header">
-                    <h1>Recent Product</h1>
+                    <h1>Producto Reciente</h1>
                 </div>
                 <div class="row align-items-center product-slider product-slider-4">
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <a href="#">Producto</a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -344,14 +334,14 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Comprar</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <a href="#">Producto</a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -372,14 +362,14 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Comprar</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <a href="#">Producto</a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -400,14 +390,14 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Comprar</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <a href="#">Producto</a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -428,14 +418,14 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Comprar</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <a href="#">Producto</a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -456,7 +446,7 @@
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -464,7 +454,7 @@
             </div>
         </div>
         <!-- Recent Product End -->
-        
+
         <!-- Review Start -->
         <div class="review">
             <div class="container-fluid">
@@ -475,7 +465,7 @@
                             <img src="{{ asset('store/img/review-1.jpg') }}" alt="Image">
                             </div>
                             <div class="review-text">
-                                <h2>Customer Name</h2>
+                                <h2>Nombre cliente</h2>
                                 <h3>Profession</h3>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
@@ -485,7 +475,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
+                                    Accesorio COMICON
                                 </p>
                             </div>
                         </div>
@@ -496,7 +486,7 @@
                             <img src="{{ asset('store/img/review-2.jpg') }}" alt="Image">
                             </div>
                             <div class="review-text">
-                                <h2>Customer Name</h2>
+                                <h2>Nombre cliente</h2>
                                 <h3>Profession</h3>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
@@ -506,7 +496,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
+                                    Accesorio COMICON
                                 </p>
                             </div>
                         </div>
@@ -517,8 +507,8 @@
                             <img src="{{ asset('store/img/review-3.jpg') }}" alt="Image">
                             </div>
                             <div class="review-text">
-                                <h2>Customer Name</h2>
-                                <h3>Profession</h3>
+                                <h2>Nombre del Cliente</h2>
+                                <h3>Profesion</h3>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -527,7 +517,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
+                                    Accesorio COMICON
                                 </p>
                             </div>
                         </div>
@@ -535,8 +525,8 @@
                 </div>
             </div>
         </div>
-        <!-- Review End -->        
-        
+        <!-- Review End -->
+
         <!-- Footer Start -->
         <div class="footer">
             <div class="container-fluid">
@@ -545,16 +535,16 @@
                         <div class="footer-widget">
                             <h2>Get in Touch</h2>
                             <div class="contact-info">
-                                <p><i class="fa fa-map-marker"></i>123 E Store, Los Angeles, USA</p>
-                                <p><i class="fa fa-envelope"></i>email@example.com</p>
-                                <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                                <p><i class="fa fa-map-marker"></i>123 YACUIBA-BOLIVIA</p>
+                                <p><i class="fa fa-envelope"></i>deyvitapia@gmail.com</p>
+                                <p><i class="fa fa-phone"></i>+50175187812</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h2>Follow Us</h2>
+                            <h2>SIGUENOS</h2>
                             <div class="contact-info">
                                 <div class="social">
                                     <a href=""><i class="fab fa-twitter"></i></a>
@@ -569,37 +559,40 @@
 
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h2>Company Info</h2>
+                            <h2>
+                                Información compañía
+                                </h2>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Condition</a></li>
+                                <li><a href="#">Sobre nosotros</a></li>
+                                <li><a href="#">Política de privacidad</a></li>
+                                <li><a href="#">Términos y Condiciones</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h2>Purchase Info</h2>
+                            <h2>
+                                Información de compra</h2>
                             <ul>
-                                <li><a href="#">Pyament Policy</a></li>
-                                <li><a href="#">Shipping Policy</a></li>
-                                <li><a href="#">Return Policy</a></li>
+                                <li><a href="#">Politica de pago</a></li>
+                                <li><a href="#">Politica de envio</a></li>
+                                <li><a href="#">Politica de devolucion</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row payment align-items-center">
                     <div class="col-md-6">
                         <div class="payment-method">
-                            <h2>We Accept:</h2>
+                            <h2>Nosotros aceptamos:</h2>
                         <img src="{{ asset('store/img/payment-method.png') }}" alt="Payment Method" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="payment-security">
-                            <h2>Secured By:</h2>
+                            <h2>Aseguroda por:</h2>
                         <img src="{{ asset('store/img/godaddy.svg') }}" alt="Payment Security" />
                         <img src="{{ asset('store/img/norton.svg') }}" alt="Payment Security" />
                         <img src="{{ asset('store/img/ssl.svg') }}" alt="Payment Security" />
@@ -609,32 +602,29 @@
             </div>
         </div>
         <!-- Footer End -->
-        
+
         <!-- Footer Bottom Start -->
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 copyright">
-                        <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
-                    </div>
 
                     <div class="col-md-6 template-by">
-                        <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        <p>Code by<a href="https://htmlcodex.com">Alejandro Tapia</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Footer Bottom End -->       
-        
+        <!-- Footer Bottom End -->
+
         <!-- Back to Top -->
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-        
+
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script src="{{ asset('store/lib/easing/easing.min.js') }}"></script>
         <script src="{{ asset('store/lib/slick/slick.min.js') }}"></script>
-        
+
         <!-- Template Javascript -->
     <script src="{{ asset('store/js/main.js') }}"></script>
     </body>

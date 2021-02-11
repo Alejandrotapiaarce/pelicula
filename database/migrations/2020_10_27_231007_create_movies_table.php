@@ -21,14 +21,16 @@ class CreateMoviesTable extends Migration
             $table->year("production");
             $table->time("duration",0);
             $table->integer("qualification");
+            $table->integer("price");
+            $table->integer("quantity");
             $table->date("premiere");
-            $table->string("summary");
+            $table->text("summary");
             $table->string("image");
             $table->foreignId("actor_id");
             $table->foreignId("category_id");
             $table->timestamps();
         });
-        Schema::create('sale_movie', function (Blueprint $table) {
+        Schema::create('movie_sale', function (Blueprint $table) {
             $table->id();
             $table->foreignId("sale_id");
             $table->foreignId("movie_id");

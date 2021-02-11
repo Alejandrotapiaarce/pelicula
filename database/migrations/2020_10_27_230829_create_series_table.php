@@ -17,6 +17,8 @@ class CreateSeriesTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("season");
+            $table->integer("price");
+            $table->integer("quantity");
             $table->string("language");
             $table->string("chapter");
             $table->year("premiere");

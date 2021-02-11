@@ -22,7 +22,9 @@ class ActorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'city' => $this->faker->city,
+            'birth' => date('Y-m-d'),
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Serie;
 use Illuminate\Database\Seeder;
 
 class SerieSeeder extends Seeder
@@ -13,6 +14,6 @@ class SerieSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Serie::factory()->count(10)->create();
     }
 }

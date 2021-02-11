@@ -2,25 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('layouts.app');
-});
 
 Auth::routes();
 
+Route::get('/limpiar', function () {
+   \Cart::clear();
+});
+
 Route::get('/paypal/pay', [App\Http\Controllers\PaymentController::class,'payWithPayPal']);
 Route::get('/paypal/status', [App\Http\Controllers\PaymentController::class,'payPalStatus']);
+
+Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('page.index');
+Route::get('/lista-productos', [App\Http\Controllers\PageController::class, 'products'])->name('page.products');
+Route::get('/cart/{id?}', [App\Http\Controllers\PageController::class, 'cart'])->name('page.cart');
+Route::get('/delete/{id}', [App\Http\Controllers\PageController::class, 'delete'])->name('page.delete');
+Route::get('/chekout', [App\Http\Controllers\PageController::class, 'chekout'])->name('page.chekout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/category',App\Http\Controllers\CategoryController::class)->middleware('auth');
@@ -32,3 +28,4 @@ Route::resource('/game',App\Http\Controllers\GameController::class)->middleware(
 Route::resource('/serie',App\Http\Controllers\SerieController::class)->middleware('auth');
 Route::resource('/movie',App\Http\Controllers\MovieController::class)->middleware('auth');
 Route::resource('/sale',App\Http\Controllers\SaleController::class)->middleware('auth');
+Route::get('/sale/detail/{id}', [App\Http\Controllers\SaleController::class, 'detail'])->name('sale.detail')->middleware('auth');

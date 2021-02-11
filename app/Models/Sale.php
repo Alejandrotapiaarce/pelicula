@@ -14,31 +14,31 @@ class Sale extends Model
 {
     use HasFactory;
 
-    
+
     public function serie()
     {
-        return $this->hasMany(Serie::class);
+        return $this->belongsToMany(Serie::class);
     }
 
-    
+
     public function game()
     {
-        return $this->hasMany(Game::class);
+        return $this->belongsToMany(Game::class);
     }
 
-    
+
     public function movie()
     {
-        return $this->hasMany(Movie::class);
+        return $this->belongsToMany(Movie::class);
     }
 
-    
+
     public function product()
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsToMany(Product::class);
     }
 
-    
+
     public function shipping()
     {
         return $this->belongsTo(Shipping::class);

@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer("quantity");
             $table->timestamps();
         });
-        Schema::create('sale_product', function (Blueprint $table) {
+        Schema::create('product_sale', function (Blueprint $table) {
             $table->id();
             $table->foreignId("sale_id");
             $table->foreignId("product_id");

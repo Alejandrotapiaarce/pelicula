@@ -116,4 +116,10 @@ class MovieController extends Controller
         $movie->delete();
         return redirect()->route('movie.index');
     }
+
+    public function apiMovies($id)
+    {
+        return Movie::find($id);
+    }
+
 }

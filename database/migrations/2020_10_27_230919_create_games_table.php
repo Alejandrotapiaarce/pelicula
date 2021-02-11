@@ -18,13 +18,15 @@ class CreateGamesTable extends Migration
             $table->string("name");
             $table->string("type");
             $table->year("game_year");
-            $table->string("requirements");
+            $table->text("requirements");
+            $table->integer("price");
+            $table->integer("quantity");
             $table->string("platform");
             $table->string("image");
             $table->foreignId("category_id");
             $table->timestamps();
         });
-        Schema::create('sale_game', function (Blueprint $table) {
+        Schema::create('game_sale', function (Blueprint $table) {
             $table->id();
             $table->foreignId("sale_id");
             $table->foreignId("game_id");
